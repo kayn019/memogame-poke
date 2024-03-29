@@ -17,6 +17,7 @@ export default function Home() {
 
   return (
     <main className="w-full h-screen font-mono">
+      
       {showTitle && <TitleScreen mode={mode} setMode={setMode} onStart={handleToggleTitle} setIsPlaying={setIsPlaying} />}
      {isPlaying && <Game mode={mode} />}
     </main>

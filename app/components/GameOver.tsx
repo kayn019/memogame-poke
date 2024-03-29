@@ -17,13 +17,13 @@ export default function GameOver({isGameOver, onRestart, handleGameOver, win}:Ga
             
             <button
               type="submit"
-              className="btn bg-green-500 hover:bg-green-600 py-1 px-2 mr-2 rounded-sm font-medium text-white"
+              className="btn bg-red-500 hover:bg-red-600 py-1 px-2 mr-2 rounded-sm font-medium text-white"
             >
               Back to Title
             </button>
             <button
               type="reset"
-              className="btn bg-red-500 hover:bg-red-600 py-1 px-2 rounded-sm font-medium text-white"
+              className="btn bg-green-500 hover:bg-green-600 py-1 px-2 rounded-sm font-medium text-white"
               onClick={onRestart}
             >
               Restart

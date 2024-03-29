@@ -21,10 +21,10 @@ export default function TitleScreen({mode, setMode, onStart, setIsPlaying}:Title
     }
 
   return (
-    <div className="flex min-h-screen flex-col content-start items-center justify-between p-24">
-      <div>Pokemon Memory Game</div>
-      <div className="flex flex-col content-start border-black border-2 p-5">
-        <div>Please choose game mode</div>
+    <div className="flex min-h-screen flex-col bg-[#F7F4F5] bg-[url('/poke.png')] content-start items-center justify-between p-24" >
+      <div className="text-6xl font-extrabold font-black font-pokemon tracking-wider bg-white p-4 rounded-3xl shadow-lg">Pokemon Memory Game</div>
+      <div className="flex flex-col content-start border-2 border-[#ffe1d4] p-5 bg-white rounded-2xl shadow-xl">
+        <div className="bg-white font-bold">Please choose game mode:</div>
         {modeBtn.map((ele, index) => (
           <div key={index} className="flex gap-4">
             {mode === ele ? <p className="animate-ping">&#9658;</p> : null}
@@ -38,11 +38,11 @@ export default function TitleScreen({mode, setMode, onStart, setIsPlaying}:Title
       </div>
       <div>
         {mode ? (
-          <button className="bg-gray-400 p-4 px-8 rounded-full" onClick={handleStart}>
+          <button className="bg-[#F27139] p-4 px-8 rounded-full shadow-xl text-[#FEE378]" onClick={handleStart}>
             Start Game
           </button>
         ) : (
-          <button className="bg-gray-200 p-4 px-8 rounded-full" disabled onClick={handleStart}>
+          <button className="bg-gray-300 p-4 px-8 rounded-full text-gray-50" disabled onClick={handleStart}>
             Start Game
           </button>
         )}

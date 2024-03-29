@@ -163,6 +163,12 @@ export default function Game({ mode }: GameProps) {
     window.location.reload();
   };
 
+  const handleBack = (e:any) => {
+   
+
+    window.location.reload();
+  };
+
   const handleOnRestart = () => {
     toggleModal();
     setSelPokemon([]); // Clear selected Pokemon
@@ -188,28 +194,35 @@ export default function Game({ mode }: GameProps) {
 
   return (
     <>
-      <div className="flex min-h-screen w-full h-full flex-col content-start items-center justify-between px-10 py-5">
+      <div className="flex min-h-screen bg-[#F7F4F5] w-full h-full flex-col content-start items-center justify-between px-10 py-5">
         <div className="flex flex-row justify-between w-full mb-4">
-          <button className="bg-white rounded-2xl px-5 py-2 hover:bg-gray-100">
+          <div>
+            <p className=" font-extrabold text-xl">Score: {score}</p>
+            <p className=" font-bold">Best: {best}</p>
+          </div>
+          <div className=" font-bold text-2xl">Don't click the same pokemon twice!</div>
+          
+          <button className="bg-white rounded-2xl px-5 py-2 hover:bg-[#FEE378]" onClick={handleBack}>
             Back
           </button>
-          <div>Don't click the same pokemon twice!</div>
-          <div>
-            <p>Score: {score}</p>
-            <p>Best: {best}</p>
-          </div>
         </div>
 
         <div className="grid grid-cols-5 auto-cols-max   w-full h-full overflow-visible gap-5">
          
-          {pokemonData.length >= pokeToShowUS && (
+          {pokemonData.length >= pokeToShowUS ? (
             
             <PokeCard
               pokemon={pokemon}
               pokemonData={pokemonData}
               onClick={handleCardClick}
             />
-          )}
+          ) : (
+            <>
+            <div></div>
+            <div></div>
+          <div className="flex flex-col w-full h-full justify-center content-center"><img src="/loading.gif" className="self-center" alt="" /></div>
+          </>)}
+        
         </div>
       </div>
 
